@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <title>Navigation Menu Example</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* แถบเมนู */
+        nav {
+            background-color: #333;
+            padding: 10px 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* เนื้อหา */
+        section {
+            padding: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showPage('home')">หน้าแรก</a></li>
+            <li><a href="#" onclick="showPage('about')">เกี่ยวกับ</a></li>
+            <li><a href="#" onclick="showPage('contact')">ติดต่อ</a></li>
+        </ul>
+    </nav>
+
+    <section id="content">
+        <h2>ยินดีต้อนรับ</h2>
+        <p>นี่คือตัวอย่างเมนูนำทางด้วยแท็ก nav</p>
+    </section>
+
+    <script>
+        function showPage(page) {
+            const content = document.getElementById("content");
+
+            if (page === "home") {
+                content.innerHTML = `
+                    <h2>หน้าแรก</h2>
+                    <p>นี่คือหน้าแรกของเว็บไซต์</p>
+                `;
+            } else if (page === "about") {
+                content.innerHTML = `
+                    <h2>เกี่ยวกับ</h2>
+                    <p>หน้านี้แสดงข้อมูลเกี่ยวกับเว็บไซต์</p>
+                `;
+            } else if (page === "contact") {
+                content.innerHTML = `
+                    <h2>ติดต่อ</h2>
+                    <p>อีเมล: example@email.com</p>
+                `;
+            }
+        }
+    </script>
+
+</body>
+</html>
